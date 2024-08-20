@@ -13,6 +13,11 @@ namespace StreetVendorsInEvents.Data
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<OpcoesPedidos> OpcoesPedidos { get; set; }
 
+        public AppDbContext(DbContextOptions<AppDbContext> options)
+          : base(options)
+        {
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=BancoStreetVendors.sqlite");

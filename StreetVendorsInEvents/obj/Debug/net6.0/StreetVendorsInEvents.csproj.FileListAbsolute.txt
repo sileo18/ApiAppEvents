@@ -65,4 +65,4 @@ C:\Projects\C#\StreetVendorsInEvents\StreetVendorsInEvents\obj\Debug\net6.0\refi
 C:\Projects\C#\StreetVendorsInEvents\StreetVendorsInEvents\obj\Debug\net6.0\StreetVendorsInEvents.pdb
 C:\Projects\C#\StreetVendorsInEvents\StreetVendorsInEvents\obj\Debug\net6.0\StreetVendorsInEvents.genruntimeconfig.cache
 C:\Projects\C#\StreetVendorsInEvents\StreetVendorsInEvents\obj\Debug\net6.0\ref\StreetVendorsInEvents.dll
-C:\Projects\C#\StreetVendorsInEvents\StreetVendorsInEvents\obj\Debug\net6.0\StreetVe.C0E40097.Up2Date
+C:\Projects\C#\StreetVendorsInEvents\StreetVendorsInEvents\obj\Debug\net6.0\StreetVendorsInEvents.csproj.CopyComplete

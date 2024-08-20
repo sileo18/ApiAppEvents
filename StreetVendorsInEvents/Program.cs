@@ -1,26 +1,32 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 using StreetVendorsInEvents.Data;
+using StreetVendorsInEvents.Repository;
+using StreetVendorsInEvents.Repository.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+// Configura serviços no contêiner.
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<AppDbContext>();
+
+// Configura o contexto do banco de dados para usar SQLite.
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite("Data Source=BancoStreetVendors.sqlite"));
+
+// Registra o repositório e a interface para injeção de dependência.
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configura o pipeline de solicitação HTTP.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
 
 app.MapControllers();
